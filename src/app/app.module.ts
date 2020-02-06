@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Components
-import { AddStudentComponent } from './add-student/add-student.component';
-import { StudentsListComponent } from './students-list/students-list.component';
-import { EditStudentComponent } from './edit-student/edit-student.component';
+import { AddStudentComponent } from './views/student/add-student/add-student.component';
+import { StudentsListComponent } from './views/student/students-list/students-list.component';
+import { EditStudentComponent } from './views/student/edit-student/edit-student.component';
 
 // Reactive Form Module
 import { ReactiveFormsModule } from '@angular/forms';
@@ -28,6 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
+import { SignInComponent } from './views/sign-in/sign-in.component';
+import { DashBoardComponent } from './views/dash-board/dash-board.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { AppComponent } from './app.component';
     AppComponent,
     AddStudentComponent,
     StudentsListComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    SignInComponent,
+    DashBoardComponent
   ],
   imports: [
     BrowserModule,

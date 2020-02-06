@@ -1,7 +1,7 @@
-export interface Student {
+export interface IStudent {
    $key: string;
    firstName: string;
    lastName: string;
-   email: string
+   email: string;
    mobileNumber: Number;
 }

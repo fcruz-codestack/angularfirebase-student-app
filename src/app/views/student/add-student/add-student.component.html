@@ -1,7 +1,7 @@
 <div class="pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Add Student</h1>
-  <p class="custom-text">A demo CRUD app for <strong>student record management system</strong> built with <strong>Angular7
-      and Firebase5</strong></p>
+  <p class="custom-text">A demo CRUD app for <strong>student record management system</strong> built with <strong>Angular 8
+      and Fir 5</strong></p>
 </div>
 
 <!-- Student form -->
@@ -14,7 +14,7 @@
           <label>First name</label>
           <input type="text" formControlName="firstName" class="form-control" required>
           <!-- Showing errors using getter method -->
-          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter at least first name</p>
           <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
         </div>
 
