@@ -26,7 +26,7 @@ export class StudentsListComponent implements OnInit {
 
   ngOnInit() {
     this.dataState(); // Initialize student's list, when component is ready
-    const s = this.crudApi.GetStudentsList();
+    const s = this.crudApi.getStudentsList();
     s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
       this.student = [];
       data.forEach(item => {
@@ -41,7 +41,7 @@ export class StudentsListComponent implements OnInit {
   // students data. It updates the state of hide When NoStudent,
   // noData & preLoader variables when any changes occurs in student data list in real-time.
   dataState() {
-    this.crudApi.GetStudentsList().valueChanges().subscribe(data => {
+    this.crudApi.getStudentsList().valueChanges().subscribe(data => {
       this.preLoader = false;
       if (data.length <= 0) {
         this.hideWhenNoStudent = false;
@@ -56,7 +56,7 @@ export class StudentsListComponent implements OnInit {
   // Method to delete student object
   deleteStudent(student: IStudent) {
     if (window.confirm('Are sure you want to delete this student ?')) { // Asking from user before Deleting student data.
-      this.crudApi.DeleteStudent(student.$key); // Using Delete student API to delete student.
+      this.crudApi.deleteStudent(student.$key); // Using Delete student API to delete student.
       this.toastr.success(student.firstName + ' successfully deleted!'); // Alert message will show up when student successfully deleted.
     }
   }
