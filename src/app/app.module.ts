@@ -11,6 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 // Firebase Modules
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
@@ -36,18 +39,20 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module 
-    AngularFireDatabaseModule,  // Firebase database module 
+    AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module
+    AngularFirestoreModule,     // Only required for database features
+    AngularFireDatabaseModule,  // Firebase database module
+    AngularFireAuthModule,      // Firebase auth module
+    AngularFireStorageModule,   // Firebase storage module
     ReactiveFormsModule,        // Reactive forms module
     AppRoutingModule,           // Main routing module
     BrowserAnimationsModule,    // Required animations module for Toastr
     ToastrModule.forRoot({      // Register NgxToast NPM module
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
-      preventDuplicates: true,      
+      preventDuplicates: true,
     }),
     NgxPaginationModule  // NGX pagination module
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
